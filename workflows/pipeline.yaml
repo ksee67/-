@@ -1,0 +1,16 @@
+name: py_pipeline
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  checkstyle_project:
+    runs_on: ubuntu_latest
+
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v2
+
+      - name: Set version Python
+        uses: actions/setup-python@v2
